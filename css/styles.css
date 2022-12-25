@@ -150,7 +150,7 @@ img {
 
 .hero {
     background:linear-gradient( rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
-    background-size: 1440px cover;
+    background-size: 1440px;
     background-repeat: no-repeat;
     background-position: 50%; 
     text-align: center;
@@ -438,13 +438,13 @@ img {
 
 .portfolio-item-card {
     display: block;
-
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
     text-decoration: none;
 }
 
 .portfolio-item-card:hover,
 .portfolio-item-card:focus {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-img {
