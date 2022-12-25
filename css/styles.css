@@ -17,6 +17,7 @@
     --border-icons-color: #8E8F99;
     --icon-color: #AFB1B8;
     --secondary-icon-color: #F4F4FD;
+    --overlay-text-color: #F4F4FD;
     --border-radius: 4px;
     --line-height-text: 1.5;
     --font-weight-primary: 600;
@@ -113,15 +114,16 @@ img {
 }
 
 .navigation-list-item {
+    position: relative;
     padding-top: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 28px;
 
     transition: color var(--anim);
 }
 
 
 .navigation-list-item:hover,
-.navigation-list-item:focus, {
+.navigation-list-item:focus {
     color: var(--brand-hover-color);
     
 }
@@ -129,19 +131,18 @@ img {
 
 .link-underline::after {
     content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
     display: block;
     width: 100%;
     height: 4px;
-    margin-top: 24px;
+    margin-bottom: 0;
     border-radius: 2px;
     background-color: var(--brand-hover-color);
     
 }
 
-/* .navigation-list-item:active {
-    border: var(--brand-hover-color);
-    border-radius: 2px;
-} */
 
 .contacts {
     display: flex;
@@ -462,8 +463,10 @@ img {
 }
 
 .portfolio-item {
+    position: relative;
     width: 360px;
     border-bottom: 0.5px solid var(--border-color);
+    overflow: hidden;
 }
 
 .portfolio-item-card {
@@ -481,6 +484,31 @@ img {
 
 .portfolio-item-img {
     background: linear-gradient(0deg, rgba(77, 90, 229, 0.1), rgba(77, 90, 229, 0.1));
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translateY(150%);
+    
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    background-color: var(--brand-color);
+
+    transition: transform var(--anim);
+}
+
+.portfolio-item-card:hover .overlay,
+.portfolio-item-card:focus .overlay {
+    transform: translateY(0);
+}
+
+.overlay-text {
+    color: var(--overlay-text-color);
 }
 
 .portfolio-item-text {
@@ -612,10 +640,18 @@ img {
     width: 408px;
     height: 576px;
     transform: translate(-50%, -50%);
+    
 
     background-color: var(--modal-bgn-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
+    transition: transform var(--anim) 300ms, opacity var(--anim) 300ms;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-100%, -100%);
+    opacity: 0;
 }
 
 .modal-btn {
