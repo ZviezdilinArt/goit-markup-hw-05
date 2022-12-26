@@ -129,11 +129,11 @@ img {
 }
 
 
-.active {
+.navigation-list .active {
     color: var(--brand-hover-color);
 }
 
-.active::after {
+.navigation-list .active::after {
     content: "";
     position: absolute;
     left: 0;
